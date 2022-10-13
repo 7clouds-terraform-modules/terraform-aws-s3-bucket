@@ -51,8 +51,8 @@ output "CREATE_BUCKET" {
 }
 
 output "CONTENT_BUCKET" {
-  description = " The name of the bucket. If omitted, Terraform will assign a random, unique name. Must be lowercase and less than or equal to 63 characters in length"
-  value = var.CONTENT_BUCKET
+  description = " The name/id of the bucket"
+  value = var.CREATE_BUCKET ? join("", aws_s3_bucket.this.*.id) : null
 }
 
 output "CONTENT_BUCKET_FORCE_DESTROY" {
