@@ -3,7 +3,7 @@
 ############################################################################################
 output "BUCKET_ARN" {
   description = "Bucket ARN"
-  value       = var.CREATE_BUCKET ? join("", aws_s3_bucket.this.*.id) : null
+  value       = var.CREATE_BUCKET ? join("", aws_s3_bucket.this.*.arn) : null
 }
 
 output "AWS_CALLER_IDENTITY_ACCOUNT_ID" {
