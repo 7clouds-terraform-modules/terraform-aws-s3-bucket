@@ -2,25 +2,25 @@
 #                                      LOCALS                                              #
 ############################################################################################
 variable "LOCALS_GRANT" {
-  type        = any
+  type        = list(any)
   description = "ACL policy grant to be assigned on Locals. Conflicts with 'acl'"
   default     = []
 }
 
 variable "LOCALS_CORS_RULES" {
-  type        = any
+  type        = list(any)
   description = "List of maps containing rules for Cross-Origin Resource Sharing to be assigned on Locals"
   default     = []
 }
 
 variable "LOCALS_LIFECYCLE_RULES" {
-  type        = any
+  type        = list(any)
   description = "List of maps containing configuration of object lifecycle management to be assigned on Locals"
   default     = []
 }
 
 variable "LOCALS_INTELLIGENT_TIERING" {
-  type        = any
+  type        = list(any)
   description = "Map containing intelligent tiering configuration to be assigned on Locals"
   default     = []
 }
@@ -44,7 +44,7 @@ variable "CREATE_BUCKET" {
 }
 
 variable "AWS_CALLER_IDENTITY_ACCOUNT_ID" {
-  type        = any
+  type        = string
   description = "AWS Caller Identity"
   default = ""
 }
@@ -182,7 +182,7 @@ variable "BUCKET_VERSIONING" {
 }
 
 variable "SERVER_SIDE_ENCRYPTION_CONFIGURATION" {
-  type        = any
+  type        = map(any)
   description = "Server-side encryption configuration"
   default     = {}
 }
@@ -200,13 +200,13 @@ variable "OBJECT_LOCK" {
 }
 
 variable "OBJECT_LOCK_CONFIGURATION" {
-  type        = any
+  type        = map(any)
   description = "Map OF S3 object locking configuration"
   default     = {}
 }
 
 variable "REPLICATION_CONFIGURATION" {
-  type        = any
+  type        = map(any)
   description = "Map of cross-region replication configuration."
   default     = {}
 }
@@ -224,7 +224,7 @@ variable "OBJECT_OWNERSHIP" {
 }
 
 variable "INTELLIGENT_TIERING" {
-  type        = any
+  type        = map(any)
   description = "Map containing intelligent tiering configuration"
   default     = {}
 }
