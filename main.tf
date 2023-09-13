@@ -279,6 +279,7 @@ resource "aws_s3_bucket_acl" "this" {
             email_address = try(grant.value.email, null)
           }
         }
+  depends_on = [aws_s3_bucket_ownership_controls.this]
       }
       owner {
         id           = try(var.owner["id"], data.aws_canonical_user_id.this.id)

@@ -214,7 +214,7 @@ variable "REPLICATION_CONFIGURATION" {
 variable "CONTROL_OBJECT_OWNERSHIP" {
   type        = bool
   description = "To define whether to manage S3 Bucket Ownership Controls on this bucket"
-  default     = false
+  default     = true
 }
 
 variable "OBJECT_OWNERSHIP" {
