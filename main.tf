@@ -279,7 +279,6 @@ resource "aws_s3_bucket_acl" "this" {
             email_address = try(grant.value.email, null)
           }
         }
-  depends_on = [aws_s3_bucket_ownership_controls.this]
       }
       owner {
         id           = try(var.owner["id"], data.aws_canonical_user_id.this.id)
@@ -287,6 +286,7 @@ resource "aws_s3_bucket_acl" "this" {
       }
     }
   }
+  depends_on = [aws_s3_bucket_ownership_controls.this]
 }
 
 resource "aws_s3_bucket_website_configuration" "this" {
